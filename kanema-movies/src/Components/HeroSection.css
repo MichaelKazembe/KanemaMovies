@@ -37,7 +37,18 @@
     transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn-primary:hover {
     background-color: #f39c12;
     color: white;
+}
+
+.btn-primary:active {
+    transform: scale(0.9);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
