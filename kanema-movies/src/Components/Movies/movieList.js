@@ -32,7 +32,7 @@ const Movies = () => {
 
     return(
         <div>
-            <h2 className="h2 display-3 my-3">Discover</h2>   
+            <h2 className="h2 display-6 my-3">Trending Movies</h2>   
             {movies.map((movie) => (
                 //Display movie title, poster and overview
                 <div className="poster-container" key={movie.id}>
