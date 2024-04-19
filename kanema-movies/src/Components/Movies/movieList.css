@@ -1,6 +1,8 @@
 .poster-container {
   display: inline;
   margin-top: 0 50px 0 50px;
+  position: relative;
+  width: 100%;
 }
 
 .movie-poster {
@@ -30,7 +32,7 @@
   font-size: 0.85rem;
 }
 
-h2 {
+h4 {
   color: white;
   size: 2rem;
 }

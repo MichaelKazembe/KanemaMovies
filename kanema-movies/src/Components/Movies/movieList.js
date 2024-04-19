@@ -32,13 +32,15 @@ const Movies = () => {
 
     return(
         <div>
-            <h2 className="h2 display-6 my-3">Trending Movies</h2>   
+            <h4 className="mt-5 mb-3">Trending Movies</h4>
+            <hr />   
             {movies.map((movie) => (
                 //Display movie title, poster and overview
                 <div className="poster-container" key={movie.id}>
-                    {/* <h1 className="movie-title">{movie.title}</h1> */}
+                    
                     <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                    {/* <div className="movie-overview">{movie.overview}</div> */}
+                    {/* <p className="movie-title">{movie.title}</p>
+                    <div className="movie-overview">{movie.overview}</div> */}
                 </div>
             ))}
         </div>
