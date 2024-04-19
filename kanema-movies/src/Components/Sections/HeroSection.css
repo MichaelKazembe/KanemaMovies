@@ -4,7 +4,7 @@
 }
 
 .hero-section {
-    background-image: url('https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg');
+    background-image: url('https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg');
     background-size: cover;
     image-resolution: from-image;
     display: inline-block;
@@ -18,6 +18,7 @@
 }
 
 .hero-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +26,7 @@
     height: 50vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
+
 
 }
 
