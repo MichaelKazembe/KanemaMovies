@@ -1,5 +1,5 @@
 import React from 'react';
-import MoviePoster from './MoviePoster';
+import MoviePoster from '../Common/MoviePoster';
 
 const FavoriteMovie = ({ movies }) => {
     return (

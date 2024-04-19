@@ -4,13 +4,13 @@
 }
 
 .hero-section {
-    background-image: url('https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg');
+    background-image: url('https://image.tmdb.org/t/p/w1280/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg');
     background-size: cover;
     image-resolution: from-image;
     display: inline-block;
     width: 100%;
-    height: 50vh;
-    border-radius: 5px;
+    height: 100%;
+    /* border-radius: 5px; */
     background-position: center;
     background-repeat: no-repeat;
     filter: brightness(100%);
@@ -25,7 +25,7 @@
     align-items: center;
     height: 50vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* background-color: rgba(0, 0, 0, 0.1); */
 
 
 }
@@ -43,12 +43,14 @@
 .btn-primary {
     background-color: var(--primary-color);
     color: black;
+    box-shadow: #f1c40f 0px 0px 10px 0px;
 
 }
 
 .btn-primary:hover {
     background-color: white;
     color: var(--primary-color);
+    box-shadow: #313130 0px 0px 10px 0px;
 }
 
 .btn-primary:active {
@@ -59,7 +61,14 @@
 .btn-dark {
     background-color: black;
     color: white;
+    box-shadow: #313130 0px 0px 10px 0px;
 
+}
+
+.btn-dark:hover {
+    background-color: white;
+    color: black;
+    box-shadow: #313130 0px 0px 10px 0px;
 }
 
 .btn-container {
@@ -73,6 +82,7 @@
 h1, p {
     color: var(--secondary-color);
     text-align: center;
+    text-shadow: #313130 0px 0px 10px;
 }
 
 h1 {

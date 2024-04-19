@@ -13,7 +13,7 @@ const Trending = () => {
 
             try {
                 const response = await fetch(
-                    `https://api.themoviedb.org/3/trending/movie/week?${API_KEY}`
+                    `https://api.themoviedb.org/3/trending/movie/week?${API_KEY}&page=1`
                 );
                 const data = await response.json();
                 setMovies(data.results);
