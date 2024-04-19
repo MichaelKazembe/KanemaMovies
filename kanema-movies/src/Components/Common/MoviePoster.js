@@ -1,10 +1,12 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './MoviePoster.css';
 
 const MoviePoster = (props) => {
     return(
-        <div>
-            <h4 className="mt-5 mb-3">{props.title}</h4>
-            <hr />   
+        <div className="movie-container">
+            <h4 className="mt-5 mb-1">{props.title}</h4>
+            <hr className="hr-animation"/>   
             {props.movies.map((movie) => (
                 //Display movie title, poster and overview
                 <div className="poster-container" key={movie.id}>

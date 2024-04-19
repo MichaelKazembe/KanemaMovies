@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './movieList.css';
 import MoviePoster from "../Common/MoviePoster";
 
 const MoviesList = () => {
