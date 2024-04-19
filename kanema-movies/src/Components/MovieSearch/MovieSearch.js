@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './movieSearch.css';
+import { Movie } from "@mui/icons-material";
 
 //api key
 const API_KEY = 'f899014959d0d08545750f5676e572fc';
@@ -54,16 +55,7 @@ const Search = () => {
             </form>
 
             {movies ?
-                <div className="movies">
-                    {movies.map((movie) => (
-                        //Display movie title, poster and overview
-                        <div className="poster-container" key={movie.id}>
-                            {/* <h1 className="movie-title">{movie.title}</h1> */}
-                            <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                            {/* <div className="movie-overview">{movie.overview}</div> */}
-                        </div>
-                    ))}
-                </div>
+                <Movie title="Search Results" movies={movies} />
                 : null}
         </>
     );

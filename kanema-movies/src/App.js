@@ -1,23 +1,26 @@
 import React from "react";
-import "./App.css";
-import Movies from "./Components/Movies/movieList";
-import HeroSection from "./Components/HeroSection";
-// import Header from "./Components/Header";
-// import Footer from "./Components/Footer";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Trending from "./Components/Pages/Trending";
-// import Movies from "./Components/Pages/Movies";
-// import Genres from "./Components/Pages/Genres";
-// import Search from "./Components/Pages/Search";
-// // import SingleMovie from "./Components/Pages/SingleMovie";
-// import Error from "./Components/Pages/Error";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import NavBar from "./Components/Navigation/NavBar";
+// import routes from "./Components/Routes/Routes";
+import Home from "./Components/Pages/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <HeroSection />
-      <Movies />
+    <div>
+      <Home />
     </div>
+    // <Router>
+    //   <NavBar />
+    //   <div className='container mt-4'>
+    //     <Routes>
+    //       {routes.map((route, index) => (
+    //         <Route key={index} path={route.path} element={route.component} />
+    //       ))}
+    //     </Routes>
+    //   </div>
+    // </Router>
   );
 };
 

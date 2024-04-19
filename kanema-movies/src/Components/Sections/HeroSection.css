@@ -1,5 +1,6 @@
 :root {
     --primary-color: #f1c40f;
+    --secondary-color: #ffffff;
 }
 
 .hero-section {
@@ -66,4 +67,14 @@
     align-items: center;
     gap: 20px;
 
+}
+
+h1, p {
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
