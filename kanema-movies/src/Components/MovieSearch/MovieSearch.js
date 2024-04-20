@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './movieSearch.css';
-import { Movie } from "@mui/icons-material";
+import MoviePoster from "../Common/MoviePoster";
 
 //api key
 const API_KEY = 'f899014959d0d08545750f5676e572fc';
@@ -29,7 +29,7 @@ const Search = () => {
 
     //handle form submit
     const handleSubmit = (e) => {
-        e.preventDefault();//prevent page from refreshing
+        e.preventDefault(); //prevent page from refreshing
         getMovie();//call getMovie function
 
         console.log(nameSearch);
@@ -55,7 +55,7 @@ const Search = () => {
             </form>
 
             {movies ?
-                <Movie title="Search Results" movies={movies} />
+                <MoviePoster title="Search Results" movies={movies} />
                 : null}
         </>
     );

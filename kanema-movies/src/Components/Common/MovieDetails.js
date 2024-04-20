@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { BASE_URL, API_KEY } from '../../api/tmdbAPI';
 
-const SingleMovie = ({ movieId }) => {
+const MovieDetails = ({ movieID }) => {
     const [movie, setMovie] = useState(null);
 
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=YOUR_API_KEY`);
+                const response = await fetch(`${BASE_URL}movie/${movieID}?${API_KEY}`);
                 const data = await response.json();
                 setMovie(data);
             } catch (error) {
@@ -15,7 +16,7 @@ const SingleMovie = ({ movieId }) => {
         };
 
         fetchMovie();
-    }, [movieId]);
+    }, [movieID]);
 
     if (!movie) {
         return <div>Loading...</div>;
@@ -31,4 +32,4 @@ const SingleMovie = ({ movieId }) => {
     );
 };
 
-export default SingleMovie;
+export default MovieDetails;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Movie } from '@mui/icons-material';
 import MoviePoster from '../Common/MoviePoster';
+import {BASE_URL, API_KEY} from '../../api/tmdbAPI';
 
 const Trending = () => {
     const [movies, setMovies] = useState([]);
@@ -9,11 +9,11 @@ const Trending = () => {
 
     useEffect(() => {
         const fetchTrendingMovies = async () => {
-            const API_KEY = 'api_key=f899014959d0d08545750f5676e572fc';
+            const trendingMovies = '/trending/movie/week?'
 
             try {
                 const response = await fetch(
-                    `https://api.themoviedb.org/3/trending/movie/week?${API_KEY}&page=1`
+                    `${BASE_URL}${trendingMovies}${API_KEY}&page=1`
                 );
                 const data = await response.json();
                 setMovies(data.results);
