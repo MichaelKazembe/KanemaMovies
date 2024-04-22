@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MoviePoster from '../Common/MoviePoster';
-import {BASE_URL, API_KEY} from '../../api/tmdbAPI';
+import {BASE_URL, API_KEY} from '../../api/tmdb';
 
 const Trending = () => {
     const [movies, setMovies] = useState([]);

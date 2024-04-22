@@ -48,6 +48,12 @@ h4 {
   size: 2rem;
   margin-left: 10px;
 }
+
+.movie-title {
+  color: rgb(131, 129, 129);
+  size: 1rem;
+  ;
+}
 /* Horizontal Rule */
 hr {
   position: relative;

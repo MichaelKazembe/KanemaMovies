@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MoviePoster from "../Common/MoviePoster";
-import { BASE_URL, API_KEY} from '../../api/tmdbAPI';
+import { BASE_URL, API_KEY} from '../../api/tmdb';
 
 const MoviesList = () => {
     const discoverMovies = '/discover/movie?sort_by=popularity.desc&';

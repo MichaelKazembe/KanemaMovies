@@ -4,6 +4,8 @@ export const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const API_KEY = 'api_key=f899014959d0d08545750f5676e572fc';
 
+export const API_IMG = 'https://image.tmdb.org/t/p/w500/';
+
 // Define the API components for different endpoints
 const ApiComponents = {
     // Example endpoint: Get popular movies

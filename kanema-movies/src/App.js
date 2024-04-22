@@ -1,18 +1,64 @@
-import React from "react";
-import Home from "./Components/Pages/Home";
+import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from "./Components/Navigation/Header";
-import Footer from "./Components/Navigation/Footer";
+import MoviePoster from './Components/Common/MoviePoster';
+import { BASE_URL, API_KEY } from './api/tmdb';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Home />
-      <Footer />
-    </div>
-  );
+const App = () => {
+    const discoverMovies = '/discover/movie?sort_by=popularity.desc&';
+    const URL = `${BASE_URL}${discoverMovies}${API_KEY}`;
+
+    // state to store movies
+    const [movies, setMovies] = useState([]);
+    // state to store the search query
+    const [query, setQuery] = useState('');
+    // state to store whether a search has been performed
+    const [searched, setSearched] = useState(false);
+
+    // fetch movies from the API
+    const getMovies = async (url) => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            setMovies(data.results);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getMovies(URL);
+    }, []);
+
+    // handle search input change
+    const handleChange = (e) => {
+        setQuery(e.target.value);
+    }
+
+    // handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const searchURL = `/search/movie?query=${query}&`;
+        const searchQuery = `${BASE_URL}${searchURL}${API_KEY}`;
+        getMovies(searchQuery);
+        setSearched(true); // Set searched to true when the user performs a search
+    }
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Search movies..."
+                    value={query}
+                    onChange={handleChange}
+                />
+                <button type="submit">Search</button>
+            </form>
+            <MoviePoster title={searched ? "Search Results" : "Discover"} movies={movies} />
+            
+        </div>
+    );
 };
 
 export default App;
