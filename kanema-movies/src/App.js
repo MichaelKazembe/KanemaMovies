@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import MoviePoster from './Components/Common/MoviePoster';
+import Footer from './Components/Navigation/Footer';
 import { BASE_URL, API_KEY } from './api/tmdb';
 
 const App = () => {
@@ -49,21 +50,22 @@ const App = () => {
             <div className="form-container">
               <form onSubmit={handleSubmit}>
                 <div>
-                <input
+                  <input
                     type="text"
                     placeholder="Search movies..."
                     value={query}
                     onChange={handleChange}
-                />
+                  />
                 </div>
                 <div>
-                <button type="submit">Search</button>
+                  <button type="submit">Search</button>
                 </div>
-            </form>
+              </form>
             </div>
             <div>
               <MoviePoster title={searched ? "Search Results" : "Discover"} movies={movies} />
             </div>
+            <Footer />
       
             
         </div>

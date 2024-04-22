@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="footer">
+        <footer>
             <hr />
-            <div className="container">
-                <span className="text-muted">Kanema Movies.</span>
-            </div>
+            <p style={{ textAlign: 'center'}}>&copy; {currentYear} Kanema Movies. All rights reserved.</p>
         </footer>
     );
 };
