@@ -11,9 +11,10 @@
 
 .poster-container {
   display: inline;
-  margin: auto;
-  position: relative;
   width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+
 }
 
 .movie-poster {

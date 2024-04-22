@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { API_IMG } from '../../api/tmdb';
 import './MoviePoster.css';
 
 const MoviePoster = props => {
@@ -17,7 +18,7 @@ const MoviePoster = props => {
                 //Display movie title, poster and overview
                 <div className="poster-container" key={movie.id}>
                     
-                    <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <img className="movie-poster" src={`${API_IMG}${movie.poster_path}`} alt={movie.title} />
                     {/* <p className="movie-title">{movie.title}</p> */}
                     {/* <div className="movie-overview">{movie.overview}</div> */}
                 </div>

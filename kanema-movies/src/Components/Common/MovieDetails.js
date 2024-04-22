@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from 'react-bootstrap';
+import { API_IMG } from '../../api/tmdb';
 
 const MovieDetails = ({ movie }) => {
     const [show, setShow] = useState(false);
@@ -10,7 +11,7 @@ const MovieDetails = ({ movie }) => {
     return (
         <>
             <div onClick={handleShow}>
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                <img src={`${API_IMG}${movie.poster_path}`} alt={movie.title} />
             </div>
 
             <Modal show={show} onHide={handleClose}>
@@ -18,7 +19,7 @@ const MovieDetails = ({ movie }) => {
                     <Modal.Title>{movie.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <img src={`${API_IMG}${movie.poster_path}`} alt={movie.title} />
                     <p>{movie.overview}</p>
                     <p>Release Date: {movie.release_date}</p>
                     <p>Rating: {movie.vote_average}</p>
