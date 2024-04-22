@@ -1,63 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from "react";
 import { Modal, Button } from 'react-bootstrap';
-import { BASE_URL, API_KEY, API_IMG } from '../../api/tmdb';
 
-const MovieDetails = ({ movieID }) => {
-    const [movie, setMovie] = useState(null);
-    const [showModal, setShowModal] = useState(false);
-    const handleShow = () => setShowModal(true);
-    const handleClose = () => setShowModal(false);
+const MovieDetails = ({ movie }) => {
+    const [show, setShow] = useState(false);
 
-    useEffect(() => {
-        const fetchMovieDetails = async () => {
-            const movieDetails = `/movie/${movieID}?`;
-
-            try {
-                const response = await fetch(
-                    `${BASE_URL}${movieDetails}${API_KEY}`
-                );
-                const data = await response.json();
-                setMovie(data);
-            } catch (error) {
-                console.error('Error fetching movie details:', error);
-            }
-        };
-
-        fetchMovieDetails();
-    }, [movieID]);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
-        <div className="card text-center bg-secondary mb-3">
-            <div className="card-body">
-                {movie && (
-                    <>
-                        <img className="card-img-top" src={API_IMG + movie.poster_path} alt={movie.title} />
-                        <div className="card-body">
-                            <button type="button" className="btn btn-dark" onClick={handleShow}>View More</button>
-                            <Modal show={showModal} onHide={handleClose}>
-                                <Modal.Header closeButton>
-                                    <Modal.Title>{movie.title}</Modal.Title>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <img className="card-img-top" style={{ width: '14rem' }} src={API_IMG + movie.poster_path} alt={movie.title} />
-                                    <h3>{movie.title}</h3>
-                                    <h4>IMDb: {movie.vote_average}</h4>
-                                    <h5>Release Date: {movie.release_date}</h5>
-                                    <br></br>
-                                    <h6>Overview</h6>
-                                    <p>{movie.overview}</p>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                                </Modal.Footer>
-                            </Modal>
-                        </div>
-                    </>
-                )}
+        <>
+            <div onClick={handleShow}>
+                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
             </div>
-        </div>
-    )
-}
+
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{movie.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                    <p>{movie.overview}</p>
+                    <p>Release Date: {movie.release_date}</p>
+                    <p>Rating: {movie.vote_average}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
+    );
+};
 
 export default MovieDetails;
+

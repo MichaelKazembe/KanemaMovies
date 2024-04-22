@@ -46,16 +46,25 @@ const App = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <div className="form-container">
+              <form onSubmit={handleSubmit}>
+                <div>
                 <input
                     type="text"
                     placeholder="Search movies..."
                     value={query}
                     onChange={handleChange}
                 />
+                </div>
+                <div>
                 <button type="submit">Search</button>
+                </div>
             </form>
-            <MoviePoster title={searched ? "Search Results" : "Discover"} movies={movies} />
+            </div>
+            <div>
+              <MoviePoster title={searched ? "Search Results" : "Discover"} movies={movies} />
+            </div>
+      
             
         </div>
     );
